@@ -48,15 +48,32 @@ console.log(sumWithInitial);
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+const array2 = [1, 7, 3, 4];
+let n = 1;
+const ValueIncr = array2.map((number) => number + n);
+console.log(ValueIncr);
 
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+const array3 = ["EPICODE", "is", "great"];
+const StringLenght = array3.map((string) => string.length);
+console.log(StringLenght);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+function OddNumbers() {
+    const ResultOdds = [];
+    for (let i = 1; i < 100; i += 2) {
+        // Inizio da 1 e incremento di 2 per ottenere solo i numeri dispari
+        ResultOdds.push(i);
+    }
+    return ResultOdds;
+}
+
+console.log(OddNumbers());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
