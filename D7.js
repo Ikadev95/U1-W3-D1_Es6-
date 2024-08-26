@@ -7,23 +7,43 @@ function concatena(string1, string2) {
     stringresult = string1.slice(0, 2) + string2.slice(-3);
     return stringresult;
 }
-console.log(concatena("ciao", "amico"));
+console.log(concatena("mario", "amico"));
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
+function GenerateArray() {
+    const array = [];
+    for (let i = 0; i < 10; i++) {
+        array.push(Math.floor(Math.random() * 101));
+    }
+    return array;
+}
+
+console.log(GenerateArray());
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
+const array = [10, 5, 4, 1, 3, 7];
+const ArrayFiltered = array.filter((element) => element % 2 == 0);
+console.log(ArrayFiltered);
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+let SumNumbers = 0;
+const Sum = array.forEach((number) => (SumNumbers += number));
+console.log(SumNumbers);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+const array1 = [1, 2, 3, 4];
+const initialValue = 0;
+const sumWithInitial = array1.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+
+console.log(sumWithInitial);
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
