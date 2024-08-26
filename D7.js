@@ -26,8 +26,11 @@ console.log(GenerateArray());
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 const array = [10, 5, 4, 1, 3, 7];
-const ArrayFiltered = array.filter((element) => element % 2 == 0);
-console.log(ArrayFiltered);
+function GetEvenValue(array) {
+    const ArrayFiltered = array.filter((element) => element % 2 == 0);
+    return ArrayFiltered;
+}
+console.log(GetEvenValue(array));
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
@@ -74,6 +77,22 @@ function OddNumbers() {
 }
 
 console.log(OddNumbers());
+
+// questa è una prova con la funzione ricorsiva
+const xray = [];
+function NumeriPari(index, array) {
+    if (index % 2 == 0 && index < 99) {
+        array.push(index);
+        index++;
+        return NumeriPari(index, array);
+    } else if (index % 2 !== 0 && index < 99) {
+        index++;
+        return NumeriPari(index, array);
+    } else if (index >= 10) {
+        return array;
+    }
+}
+console.log(NumeriPari(0, xray));
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
