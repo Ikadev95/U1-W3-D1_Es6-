@@ -43,8 +43,11 @@ console.log(SumNumbers);
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 const array1 = [1, 2, 3, 4];
-const initialValue = 0;
-const sumWithInitial = array1.reduce((accumulator, currentValue) => accumulator + currentValue, initialValue);
+const sumWithInitial = array1.reduce((accumulator, currentValue) => {
+    console.log(accumulator);
+    console.log(currentValue);
+    return accumulator + currentValue;
+});
 
 console.log(sumWithInitial);
 
@@ -260,6 +263,13 @@ function SumFilmYears(movies) {
     return sum;
 }
 console.log(SumFilmYears(movies));
+
+// versione con reduce
+let prova = movies.reduce((accumulator, currentValue) => {
+    return accumulator + parseInt(currentValue.Year);
+}, 0);
+console.log(prova);
+
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
